@@ -1,7 +1,7 @@
 nav {
   display: flex;
   height: 120px;
-  width: auto;
+  width: 100%;
   z-index: 2;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -27,5 +27,5 @@ nav {
 .nav-down-arrow {
   display: flex;
   margin-top: -15px;
-  color: red;
+  color: #e1daf0;
 }

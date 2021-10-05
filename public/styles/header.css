@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  z-index: 1;
+  background-color: #e1daf0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
+}
+
+.header-name {
+  display: flex;
+  margin-top: -20px;
+  color: #3d2f5c;
+}
+
+.not-bold {
+  font-weight: normal;
+}
