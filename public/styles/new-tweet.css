@@ -5,7 +5,7 @@
   margin-top: 60px;
 }
 
-.tweet-input {
+#tweet-text {
   display: inline;
   height: 40px;
   width: 100%;
@@ -23,7 +23,7 @@
   padding-top: 5px;
 }
 
-.tweet-button {
+#tweet-button {
   display: flex;
   border: none;
   color: #FFFFFF;
@@ -32,7 +32,13 @@
   font-size: 90%;
 }
 
-.tweet-counter {
+.positive {
   display: flex;
   font-family: 'Bungee', cursive;
+}
+
+.negative {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  color: red;
 }

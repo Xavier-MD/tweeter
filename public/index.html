@@ -32,21 +32,20 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Character Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <div class="nav-logo">
-        <span>tweeter</span>
-      </div>
+      <span id="nav-logo">tweeter</span>
       <div class="nav-content">
         <div class="nav-text">
           <p><b>Write</b> a new tweet</p>
         </div>
-        <div class="nav-down-arrow">
-          <i class="fas fa-angle-double-down"></i>
-        </div>
+        <i class="fas fa-angle-double-down" id="nav-down-arrow"></i>
       </div>
     </nav>
 
@@ -57,7 +56,7 @@
       </div>
       <br>
       <div class="header-name">
-          <h2>Amy <span class="not-bold">Mansell</span></h2>
+          <h2>Amy <span id="not-bold">Mansell</span></h2>
       </div>
     </header>
 
@@ -65,10 +64,10 @@
     <main class="container">
       <section class="new-tweet">
         <form method=POST action="/tweets">
-          <textarea class="tweet-input" name="text" type="text" placeholder="What are you humming about?"></textarea>
+          <textarea id="tweet-text" name="text" type="text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-addons">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output class="tweet-counter" name="counter" for="tweet-text">140</output>
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output id="tweet-counter" class="positive" name="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>

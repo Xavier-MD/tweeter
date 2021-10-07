@@ -16,6 +16,6 @@ header {
   color: #3d2f5c;
 }
 
-.not-bold {
+#not-bold {
   font-weight: normal;
 }

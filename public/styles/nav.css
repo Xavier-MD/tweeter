@@ -11,7 +11,7 @@ nav {
   color: #FFFFFF;
 }
 
-.nav-logo {
+#nav-logo {
   display: flex;
   padding-top: 20px;
   font-size: 1.8em;
@@ -28,7 +28,7 @@ nav {
   display: flex;
 }
 
-.nav-down-arrow {
+#nav-down-arrow {
   display: flex;
   margin-top: -20px;
   color: #e1daf0;
