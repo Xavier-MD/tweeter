@@ -6,43 +6,10 @@
 
 $(document).ready(() => {
   
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
-  const renderTweets = function(tweets) {
-    let $tweets = '';
-    for (let tweet of tweets) {
-      $tweets = `
-      ${$tweets}
-      ${createTweetElement(tweet)}
-      `;
-    }
-    $('.all-tweets').append($tweets);
-  };
+  /* Creates Markup For Corresponding Tweet Objects */
 
   const createTweetElement = function(tweetObject) {
-    const $Tweet = `
+    const $tweet = `
       <article>
         <header>
           <p>${tweetObject.user.name}</p>
@@ -59,9 +26,60 @@ $(document).ready(() => {
         </footer>
       </article>
       `;
-    return $Tweet;
+
+    return $tweet;
   };
 
-  renderTweets(data);
+  /* Combines An Array Of Tweet Articles & Appends Them In 'index.html' */
+
+  const renderTweets = function(tweets) {
+    let tweetsToAdd = '';
+    for (let tweet of tweets) {
+      tweetsToAdd = `
+      ${createTweetElement(tweet)}
+      ${tweetsToAdd}
+      `;
+    }
+    $('.all-tweets').append(tweetsToAdd);
+  };
+
+  /* Prevents Form Submission Of New Tweet, Sends Ajax Request & POSTS To /tweets */
+
+  $('section.new-tweet form').submit(function(event) {
+    const $form     = $('section.new-tweet form');
+    const $textArea = $('section.new-tweet form textarea');
+    const $counter  = $('section.new-tweet form output');
+    const formData  = $form.serialize();
+    const tweetsUrl = "http://localhost:8080/tweets";
+    event.preventDefault();
+    if ($textArea.val().trim() === '' || $textArea.val().trim() === null) {
+      alert('The text area cannot be left blank.');
+      return;
+    } else if ($textArea.val().length > 140) {
+      alert('The text area cannot exceed 140 characters.');
+      return;
+    }
+    $.ajax({data: formData, url: tweetsUrl, method: 'POST'})
+      .then(function() {
+        $("section.all-tweets").empty();
+        $textArea.val("");
+        $counter.text("140");
+        loadTweets();
+      });
+  });
+
+  /* Submits An Ajax Get Request To /tweets */
+
+  const loadTweets = function() {
+    const tweetsUrl = "http://localhost:8080/tweets";
+    $.ajax({url: tweetsUrl, method: 'GET'})
+      .then(function(response) {
+        renderTweets(response);
+      });
+  };
+
+  /* Load All Tweets Upon Realoading The Page */
+  
+  loadTweets();
 
 });
