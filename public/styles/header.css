@@ -1,23 +1,22 @@
 /* Profile Header Element */
-.account-details {
+header.account-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 400px;
   width: 100%;
-  z-index: 1;
   background-color: #eee6ff;
   background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 }
 
 /* Profile Header Picture */
-.account-details img {
+header.account-details img {
   margin-top: 30px;
 }
 
 /* Profile Header Full Name */
-.account-details h2 {
+header.account-details h2 {
   margin-top: 0px;
   color: #FFFFFF;
 }

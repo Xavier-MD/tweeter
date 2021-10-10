@@ -4,48 +4,47 @@
 }
 
 /* Individual Tweet Article */
-.all-tweets article {
+article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
   border: solid 4px;
-}
-
-/* Individual Tweet Header */
-.all-tweets header {
-  width: 100%;
   padding-top: 10px;
-  padding-bottom: 0px;
   padding-left: 35px;
   padding-right: 35px;
 }
 
-/* Individual Tweet Name & User ID Box */
-.all-tweets header .identification {
+/* Individual Tweet Header */
+article header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 /* Individual Tweet User ID */
-.all-tweets header #user-id {
+article header .handle {
   color: #deceff;
   font-weight: bold;
 }
 
-/* Individual Tweet Contents */
-.all-tweets header .tweet-contents {
-  padding-top: 20px;
-  padding-bottom: 20px;
+/* Individual Tweet Content */
+article .content {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 40px;
   font-size: 90%;
   font-weight: bold;
 }
 
 /* Individual Tweet Footer */
-.all-tweets footer {
+article footer {
   display: flex;
-  justify-content: space-between  ;
-  width: 98%;
-  border: none;
+  justify-content: space-between;
+  width: 103.5%;
+  border: 0;
   border-top: solid 4px;
   padding-left: 20px;
   padding-right: 20px;
@@ -53,7 +52,7 @@
   font-weight: bold;
 }
 
-.all-tweets footer .icons {
+article footer .icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,6 +60,6 @@
   color: #deceff;
 }
 
-.all-tweets footer .icons i:hover {
+article footer .icons i:hover {
   color: #a476ff;
 }

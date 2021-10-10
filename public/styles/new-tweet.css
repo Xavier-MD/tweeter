@@ -12,8 +12,8 @@
 .new-tweet textarea {
   height: 62px;
   width: 100%;
-  border: none;
-  resize: none;
+  border: 0;
+  resize: 0;
   background: transparent;
   font-weight: bold;
 }
@@ -23,14 +23,14 @@
   display: flex;
   justify-content: space-between;
   margin-top: -4px;
-  border: none;
+  border: 0;
   border-top: solid 4px;
   padding-top: 10px;
 }
 
 /* New Tweet Button */
-.new-tweet .add-ons button {
-  border: none;
+.new-tweet button {
+  border: 0;
   color: #FFFFFF;
   background-color: #4056A1;
   font-family: 'Bungee', cursive;
@@ -38,11 +38,11 @@
 }
 
 /* New Tweet Character Counter */
-.new-tweet .add-ons output {
+.new-tweet output {
   font-family: 'Bungee', cursive;
 }
 
 /* Supplement For New Tweet Character Counter */
-.new-tweet .add-ons output.negative {
+.new-tweet output.negative {
   color: #CE183D;
 }
