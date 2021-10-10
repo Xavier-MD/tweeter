@@ -8,6 +8,16 @@
   margin-bottom: 90px;
 }
 
+/* New Tweet Individual Error Boxes */
+.input-error,
+.length-error {
+  display: none;
+  width: fit-content;
+  border: solid crimson;
+  padding: 10px;
+  color: crimson;
+}
+
 /* New Tweet Text Area */
 .new-tweet textarea {
   height: 62px;

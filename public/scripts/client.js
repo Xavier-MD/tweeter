@@ -12,7 +12,10 @@ $(document).ready(() => {
     const $tweet = `
       <article>
         <header>
-          <p>${tweetObject.user.name}</p>
+          <div class="identifiers">
+            <img src= "${tweetObject.user.avatars}">
+            <p>${tweetObject.user.name}</p>
+          </div>
           <p class="handle">${tweetObject.user.handle}</p>
         </header>
         <p class="content">${escape(tweetObject.content.text)}</p>
@@ -46,22 +49,26 @@ $(document).ready(() => {
   /* Prevents Form Submission Of New Tweet, Sends Ajax Request & POSTS To /tweets */
 
   $('section.new-tweet form').submit(function(event) {
-    const $form     = $('section.new-tweet form');
-    const $textArea = $('section.new-tweet form textarea');
-    const $counter  = $('section.new-tweet form output');
-    const formData  = $form.serialize();
-    const tweetsUrl = "http://localhost:8080/tweets";
+    const $form        = $('section.new-tweet form');
+    const $textArea    = $('section.new-tweet form textarea');
+    const $counter     = $('section.new-tweet form output');
+    const $inputError  = $('section.new-tweet form .input-error');
+    const $lengthError = $('section.new-tweet form .length-error');
+    const formData     = $form.serialize();
+    const tweetsUrl    = "http://localhost:8080/tweets";
     event.preventDefault();
     if ($textArea.val().trim() === '' || $textArea.val().trim() === null) {
-      alert('The text area cannot be left blank.');
+      $inputError.slideDown();
       return;
     } else if ($textArea.val().length > 140) {
-      alert('The text area cannot exceed 140 characters.');
+      $lengthError.slideDown();
       return;
     }
     $.ajax({data: formData, url: tweetsUrl, method: 'POST'})
       .then(function() {
         $("section.all-tweets").empty();
+        $inputError.slideUp();
+        $lengthError.slideUp();
         $textArea.val("");
         $counter.text("140");
         loadTweets();

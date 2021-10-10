@@ -10,7 +10,7 @@ article {
   align-items: center;
   margin-bottom: 30px;
   border: solid 4px;
-  padding-top: 10px;
+  padding-top: 35px;
   padding-left: 35px;
   padding-right: 35px;
 }
@@ -22,7 +22,18 @@ article header {
   width: 100%;
 }
 
-/* Individual Tweet User ID */
+/* Flexbox For Avatar & Name */
+article header .identifiers {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Individual Tweet Avatar */
+article header img {
+  padding-right: 20px;
+}
+
+/* Individual Tweet Handle */
 article header .handle {
   color: #deceff;
   font-weight: bold;
@@ -31,11 +42,9 @@ article header .handle {
 /* Individual Tweet Content */
 article .content {
   display: flex;
-  justify-content: left;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 35px;
   padding-bottom: 40px;
-  font-size: 90%;
   font-weight: bold;
 }
 
