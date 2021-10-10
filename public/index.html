@@ -27,6 +27,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- All Tweets CSS -->
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -38,39 +41,57 @@
   </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span id="nav-logo">tweeter</span>
-      <div class="nav-content">
-        <div class="nav-text">
-          <p><b>Write</b> a new tweet</p>
-        </div>
-        <i class="fas fa-angle-double-down" id="nav-down-arrow"></i>
+      <span id="logo">tweeter</span>
+      <div class="content">
+        <p>Write <span class="not-bold">a new tweet</span></p>
+        <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 
     <!-- Header -->
-    <header>
-      <div class="header-img">
-          <img src="/images/profile-hex.png"> 
-      </div>
+    <header class='account-details'>
+      <img src="/images/profile-hex.png">
       <br>
-      <div class="header-name">
-          <h2>Amy <span id="not-bold">Mansell</span></h2>
-      </div>
+      <h2>Amy <span class="not-bold">Mansell</span></h2>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <form method=POST action="/tweets">
-          <textarea id="tweet-text" name="text" type="text" placeholder="What are you humming about?"></textarea>
-          <div class="tweet-addons">
-            <button id="tweet-button" type="submit">Tweet</button>
-            <output id="tweet-counter" class="positive" name="counter" for="tweet-text">140</output>
+          <textarea name="text" type="text" placeholder="What are you humming about?"></textarea>
+          <div class="add-ons">
+            <button type="submit">Tweet</button>
+            <output name="counter" for="new-tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <section class="all-tweets">
+        <article>
+          <header>
+            <div class="identification">
+              <p id="person-name">Newton</p>
+              <p id="user-id">@SirIsaac</p>
+            </div>
+            <p class="tweet-contents">If I have seen further it is by standing on the shoulders of giants</p>
+          </header>
+          <footer>
+            <p class="date">10 days ago</p>
+            <div class="icons">
+              <i class="fab fa-font-awesome-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
+
     </main>
+    
   </body>
 </html>

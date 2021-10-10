@@ -1,0 +1,66 @@
+/* All Tweets Section */
+.all-tweets {
+  width: 100%;
+}
+
+/* Individual Tweet Article */
+.all-tweets article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 4px;
+}
+
+/* Individual Tweet Header */
+.all-tweets header {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+/* Individual Tweet Name & User ID Box */
+.all-tweets header .identification {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Individual Tweet User ID */
+.all-tweets header #user-id {
+  color: #deceff;
+  font-weight: bold;
+}
+
+/* Individual Tweet Contents */
+.all-tweets header .tweet-contents {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 90%;
+  font-weight: bold;
+}
+
+/* Individual Tweet Footer */
+.all-tweets footer {
+  display: flex;
+  justify-content: space-between  ;
+  width: 98%;
+  border: none;
+  border-top: solid 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 70%;
+  font-weight: bold;
+}
+
+.all-tweets footer .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 7%;
+  color: #deceff;
+}
+
+.all-tweets footer .icons i:hover {
+  color: #a476ff;
+}

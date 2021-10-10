@@ -1,4 +1,5 @@
-header {
+/* Profile Header Element */
+.account-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,16 +7,17 @@ header {
   height: 400px;
   width: 100%;
   z-index: 1;
-  background-color: #e1daf0;
+  background-color: #eee6ff;
   background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 }
 
-.header-name {
-  display: flex;
-  margin-top: -20px;
-  color: #3d2f5c;
+/* Profile Header Picture */
+.account-details img {
+  margin-top: 30px;
 }
 
-#not-bold {
-  font-weight: normal;
+/* Profile Header Full Name */
+.account-details h2 {
+  margin-top: 0px;
+  color: #FFFFFF;
 }

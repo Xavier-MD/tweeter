@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f1fdfd;
+  background-color: #FFFFFF;
   color: #545149;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -32,6 +32,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:90%;
-  background-color: #f1fdfd;
+  width: 90%;
+  background-color: #FFFFFF;
+}
+
+.not-bold {
+  font-weight: normal;
 }
