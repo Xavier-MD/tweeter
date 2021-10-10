@@ -15,7 +15,7 @@ $(document).ready(() => {
           <p>${tweetObject.user.name}</p>
           <p class="handle">${tweetObject.user.handle}</p>
         </header>
-        <p class="content">${tweetObject.content.text}</p>
+        <p class="content">${escape(tweetObject.content.text)}</p>
         <footer>
           <p>${timeago.format(tweetObject.created_at)}</p>
           <div class="icons">
@@ -76,6 +76,14 @@ $(document).ready(() => {
       .then(function(response) {
         renderTweets(response);
       });
+  };
+
+  /* Escape Function To Avoid XSS Attacks */
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   /* Load All Tweets Upon Realoading The Page */
