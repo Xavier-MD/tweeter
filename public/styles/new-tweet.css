@@ -1,16 +1,15 @@
 /* New Tweet Section */
-.new-tweet {
+section.new-tweet {
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 1;
-  margin-top: 80px;
+  margin-top: 90px;
   margin-bottom: 90px;
 }
 
-/* New Tweet Individual Error Boxes */
-.input-error,
-.length-error {
+/* New Tweet Error Boxes */
+section.new-tweet form p.input-error,
+section.new-tweet form p.length-error {
   display: none;
   width: fit-content;
   border: solid crimson;
@@ -19,27 +18,26 @@
 }
 
 /* New Tweet Text Area */
-.new-tweet textarea {
+section.new-tweet form textarea {
   height: 62px;
   width: 100%;
   border: 0;
-  resize: 0;
+  resize: none;
   background: transparent;
   font-weight: bold;
 }
 
 /* New Tweet Button & Character Counter */
-.new-tweet .add-ons {
+section.new-tweet form div {
   display: flex;
   justify-content: space-between;
-  margin-top: -4px;
   border: 0;
   border-top: solid 4px;
   padding-top: 10px;
 }
 
 /* New Tweet Button */
-.new-tweet button {
+section.new-tweet form div button {
   border: 0;
   color: #FFFFFF;
   background-color: #4056A1;
@@ -48,11 +46,12 @@
 }
 
 /* New Tweet Character Counter */
-.new-tweet output {
+section.new-tweet form div output {
+  margin-top: -5px;
   font-family: 'Bungee', cursive;
 }
 
 /* Supplement For New Tweet Character Counter */
-.new-tweet output.negative {
+section.new-tweet form div output.negative {
   color: #CE183D;
 }

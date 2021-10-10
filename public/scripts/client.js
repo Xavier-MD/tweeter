@@ -5,23 +5,27 @@
  */
 
 $(document).ready(() => {
-  
-  /* Creates Markup For Corresponding Tweet Objects */
 
+  /* Function: Helps Avoid XSS Attacks */
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
+  /* Function: Creates Markup For A Given Tweet Object */
   const createTweetElement = function(tweetObject) {
     const $tweet = `
       <article>
         <header>
-          <div class="identifiers">
-            <img src= "${tweetObject.user.avatars}">
-            <p>${tweetObject.user.name}</p>
-          </div>
+          <img src="${tweetObject.user.avatars}">
+          <p class="name">${tweetObject.user.name}</p>
           <p class="handle">${tweetObject.user.handle}</p>
         </header>
         <p class="content">${escape(tweetObject.content.text)}</p>
         <footer>
           <p>${timeago.format(tweetObject.created_at)}</p>
-          <div class="icons">
+          <div>
             <i class="fab fa-font-awesome-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="far fa-heart"></i>
@@ -29,32 +33,28 @@ $(document).ready(() => {
         </footer>
       </article>
       `;
-
     return $tweet;
   };
 
-  /* Combines An Array Of Tweet Articles & Appends Them In 'index.html' */
-
+  /* Function: Combines Multiple Tweet Articles & Appends Them To 'section.all-tweets' In 'index.html' */
   const renderTweets = function(tweets) {
-    let tweetsToAdd = '';
+    let tweetsToAdd = ``;
     for (let tweet of tweets) {
       tweetsToAdd = `
       ${createTweetElement(tweet)}
       ${tweetsToAdd}
       `;
     }
-    $('.all-tweets').append(tweetsToAdd);
+    $('section.all-tweets').append(tweetsToAdd);
   };
 
-  /* Prevents Form Submission Of New Tweet, Sends Ajax Request & POSTS To /tweets */
-
+  /* Submit Event Handler: Prevents Form Submission For A New Tweet. Instead, Sends An Ajax POST Request To '/tweets' */
   $('section.new-tweet form').submit(function(event) {
-    const $form        = $('section.new-tweet form');
+    const $inputError  = $('section.new-tweet form p.input-error');
+    const $lengthError = $('section.new-tweet form p.length-error');
     const $textArea    = $('section.new-tweet form textarea');
-    const $counter     = $('section.new-tweet form output');
-    const $inputError  = $('section.new-tweet form .input-error');
-    const $lengthError = $('section.new-tweet form .length-error');
-    const formData     = $form.serialize();
+    const $counter     = $('section.new-tweet form div output');
+    const formData     = $('section.new-tweet form').serialize();
     const tweetsUrl    = "http://localhost:8080/tweets";
     event.preventDefault();
     if ($textArea.val().trim() === '' || $textArea.val().trim() === null) {
@@ -76,7 +76,6 @@ $(document).ready(() => {
   });
 
   /* Submits An Ajax Get Request To /tweets */
-
   const loadTweets = function() {
     const tweetsUrl = "http://localhost:8080/tweets";
     $.ajax({url: tweetsUrl, method: 'GET'})
@@ -85,16 +84,7 @@ $(document).ready(() => {
       });
   };
 
-  /* Escape Function To Avoid XSS Attacks */
-
-  const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
   /* Load All Tweets Upon Realoading The Page */
-  
   loadTweets();
 
 });

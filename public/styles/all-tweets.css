@@ -1,67 +1,70 @@
 /* All Tweets Section */
-.all-tweets {
+section.all-tweets {
   width: 100%;
 }
 
-/* Individual Tweet Article */
-article {
+/* Tweet Article */
+section.all-tweets article {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
   border: solid 4px;
-  padding-top: 35px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding: 35px;
+  padding-bottom: 0px;
 }
 
-/* Individual Tweet Header */
-article header {
+/* Tweet Header */
+section.all-tweets article header {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-/* Flexbox For Avatar & Name */
-article header .identifiers {
+/* Tweet Avatar */
+section.all-tweets article header img {
+  padding-right: 25px;
+}
+
+/* Tweet Name */
+section.all-tweets article header p.name {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  width: 100%;
 }
 
-/* Individual Tweet Avatar */
-article header img {
-  padding-right: 20px;
-}
-
-/* Individual Tweet Handle */
-article header .handle {
+/* Tweet Handle */
+section.all-tweets article header p.handle {
   color: #deceff;
   font-weight: bold;
 }
 
-/* Individual Tweet Content */
-article .content {
+/* Tweet Content */
+section.all-tweets article p.content {
   display: flex;
+  justify-content: flex-start;
   width: 100%;
   padding-top: 35px;
-  padding-bottom: 40px;
+  padding-bottom: 35px;
   font-weight: bold;
+  word-wrap: break-word;
 }
 
-/* Individual Tweet Footer */
-article footer {
+/* Tweet Footer */
+section.all-tweets article footer {
   display: flex;
   justify-content: space-between;
   width: 103.5%;
   border: 0;
   border-top: solid 4px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 25px;
   font-size: 70%;
   font-weight: bold;
 }
 
-article footer .icons {
+/* Flexbox For Tweet Data & Icons */
+section.all-tweets article footer div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,6 +72,7 @@ article footer .icons {
   color: #deceff;
 }
 
-article footer .icons i:hover {
-  color: #a476ff;
+/* Flexbox For Tweet Icons */
+section.all-tweets article footer div i:hover {
+  color: #8f59fc;
 }

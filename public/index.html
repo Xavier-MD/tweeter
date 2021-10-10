@@ -48,14 +48,14 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <div class="content">
+      <div>
         <p>Write <span class="not-bold">a new tweet</span></p>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 
     <!-- Header -->
-    <header class='account-details'>
+    <header class='account'>
       <img src="/images/profile-hex.png">
       <br>
       <h2>Amy <span class="not-bold">Mansell</span></h2>
@@ -66,11 +66,10 @@
 
       <section class="new-tweet">
         <form method=POST action="/tweets">
-            <p class="input-error"> <i class="fas fa-exclamation-triangle"></i> The text box cannot be left blank. <i class="fas fa-exclamation-triangle"></i></p>
-            <p class="length-error"><i class="fas fa-exclamation-triangle"></i> The text box cannot exceed 140 characters. <i class="fas fa-exclamation-triangle"></i></p>
-          </div>
+            <p class="input-error"> <i class="fas fa-exclamation-triangle"></i> The text box cannot be left blank <i class="fas fa-exclamation-triangle"></i></p>
+            <p class="length-error"><i class="fas fa-exclamation-triangle"></i> The text box cannot exceed 140 characters <i class="fas fa-exclamation-triangle"></i></p>
           <textarea name="text" type="text" placeholder="What are you humming about?"></textarea>
-          <div class="add-ons">
+          <div>
             <button type="submit">Tweet</button>
             <output name="counter" for="new-tweet-text">140</output>
           </div>
