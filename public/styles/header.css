@@ -20,3 +20,12 @@ header.account h2 {
   margin-top: 0px;
   color: #FFFFFF;
 }
+
+@media screen and (min-width: 1024px) {
+
+  header.account {
+    width: 20%;
+    margin-left: 100px;
+  }
+
+}

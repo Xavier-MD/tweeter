@@ -59,9 +59,11 @@ $(document).ready(() => {
     event.preventDefault();
     if ($textArea.val().trim() === '' || $textArea.val().trim() === null) {
       $inputError.slideDown();
+      $lengthError.slideUp();
       return;
     } else if ($textArea.val().length > 140) {
       $lengthError.slideDown();
+      $inputError.slideUp();
       return;
     }
     $.ajax({data: formData, url: tweetsUrl, method: 'POST'})

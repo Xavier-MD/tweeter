@@ -1,6 +1,6 @@
 /* Top Bar Element */
 nav {
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,8 @@ nav {
   padding-right: 1.5em;
   z-index: 10;
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: #eee6ff;
+  background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
 }
 
 /* Tweeter Logo */
@@ -38,4 +39,12 @@ nav div p {
 nav div i {
   margin-top: -16px;
   color: #eee6ff;
+}
+
+@media screen and (min-width: 1024px) {
+  
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }

@@ -12,6 +12,12 @@ section.all-tweets article {
   border: solid 4px;
   padding: 35px;
   padding-bottom: 0px;
+  background-color: #f0ffec;
+}
+
+article:hover {
+  box-shadow: 10px 10px 15px #2c0a47;
+  background-color: #FFFFFF
 }
 
 /* Tweet Header */
@@ -41,8 +47,6 @@ section.all-tweets article header p.handle {
 
 /* Tweet Content */
 section.all-tweets article p.content {
-  display: flex;
-  justify-content: flex-start;
   width: 100%;
   padding-top: 35px;
   padding-bottom: 35px;

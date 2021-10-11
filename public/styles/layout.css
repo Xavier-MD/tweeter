@@ -17,25 +17,48 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin-top: 120px;
   color: #545149;
-  background-color: #FFFFFF;
+  background-color: #e6fffe;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+body div.layout-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- main {
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
-  background-color: #FFFFFF;
+  background-color: #e6fffe;
 }
+  
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
 
 .not-bold {
   font-weight: normal;
+}
+
+@media screen and (min-width: 1024px) {
+  
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    height: 1000px;
+    margin-left: 100px;
+    margin-right: 100px;
+    overflow-y: auto;
+  }
+
 }
