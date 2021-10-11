@@ -58,6 +58,8 @@ main {
     height: 1000px;
     margin-left: 100px;
     margin-right: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
     overflow-y: auto;
   }
 
